@@ -1,0 +1,10 @@
+C:\Users\Ali\source\repos\kargahPage166\kargahPage166\bin\Debug\kargahPage166.exe.config
+C:\Users\Ali\source\repos\kargahPage166\kargahPage166\bin\Debug\kargahPage166.exe
+C:\Users\Ali\source\repos\kargahPage166\kargahPage166\bin\Debug\kargahPage166.pdb
+C:\Users\Ali\source\repos\kargahPage166\kargahPage166\obj\Debug\kargahPage166.csproj.AssemblyReference.cache
+C:\Users\Ali\source\repos\kargahPage166\kargahPage166\obj\Debug\kargahPage166.Form1.resources
+C:\Users\Ali\source\repos\kargahPage166\kargahPage166\obj\Debug\kargahPage166.Properties.Resources.resources
+C:\Users\Ali\source\repos\kargahPage166\kargahPage166\obj\Debug\kargahPage166.csproj.GenerateResource.cache
+C:\Users\Ali\source\repos\kargahPage166\kargahPage166\obj\Debug\kargahPage166.csproj.CoreCompileInputs.cache
+C:\Users\Ali\source\repos\kargahPage166\kargahPage166\obj\Debug\kargahPage166.exe
+C:\Users\Ali\source\repos\kargahPage166\kargahPage166\obj\Debug\kargahPage166.pdb
