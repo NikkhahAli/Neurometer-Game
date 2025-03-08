@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,28 +15,73 @@ namespace kargahPage166
         bool isActiveGame = false;
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();   
         }
-
+        public void resetGame()
+        {
+            isActiveGame = false;
+            seconds = 0;
+            label8.Text = "" + seconds;
+        }
         private void Form1_Load(object sender, EventArgs e) { }
 
         int seconds = 0;
         private void button2_Click(object sender, EventArgs e)
         {
-            if (label9.Text == "label9")
+            for (int k = 0; k < comboBox1.Items.Count; k++)
             {
-                MessageBox.Show("قبل از شروع بازی باید یک اسم انتخاب کنید");
+                if (comboBox1.Items[k].ToString() == "")
+                {
+                    MessageBox.Show("شما باید یک چیزی وارد کنید");
+                }
+                else
+                {
+                    isActiveGame = true;
+
+                    if (isActiveGame == true)
+                    {
+                        timer1.Start();
+                    }
+                    else
+                    {
+                        timer1.Stop();
+                    }
+                }
+            }
+        }
+
+        bool check = true;
+        public void checkName()
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("شما باید یک نام  وارد کنید ");
             }
             else
             {
-                isActiveGame = true;
+                if (check)
+                {
+                    comboBox1.Items.Add(textBox1.Text);
+                }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label9.Text = textBox1.Text;
-            textBox1.Text = "";
+            for (int k = 0; k < comboBox1.Items.Count; k++)
+            {
+                if (comboBox1.Items[k].ToString() == textBox1.Text)
+                {
+                    MessageBox.Show("شما باید یک نام جدید وارد کنید");
+                    check = false;
+                }
+                else
+                {
+                    check = true;
+                }
+            }
+
+            this.checkName();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -63,16 +108,22 @@ namespace kargahPage166
                         {
                             timer1.Stop();
                             MessageBox.Show("شما باختید");
-                            isActiveGame = false;
-                            label10.Text = "" + seconds;
+
+                            DialogResult results = MessageBox.Show("شما باختید آیا میخواهید دوباره بازی کنید ؟ ", "هشدار", MessageBoxButtons.OKCancel);
+
+                            if (results == DialogResult.OK)
+                            {
+                                this.resetGame();
+                            }
                             break;
                         }
                     }
-                   
                 }
             }
         }
 
+        int max;
+        int counter = 0;
         private void button3_MouseMove(object sender, MouseEventArgs e)
         {
             for (int k = 0; k < 1; k++)
@@ -81,10 +132,46 @@ namespace kargahPage166
                 if (isActiveGame == false)
                 {
                     timer1.Stop();
-                    label10.Text = "" + seconds;
-                    MessageBox.Show("شما بردید", "" + k);
+
+                    if (counter == 0)
+                    {
+                        max = seconds;
+                        counter++;
+                    }
+                    else if (counter >= 1)
+                    {
+                        if (max > seconds)
+                        {
+                            max = seconds;
+                        }
+                    }
+
+                    comboBox2.Items.Add(seconds);
+
+                    MessageBox.Show("شما بردید");
+
+                    DialogResult result = MessageBox.Show("شما بردید آیا میخواهید دوباره بازی کنید ؟ ", "هشدار", MessageBoxButtons.OKCancel);
+
+                    if (result == DialogResult.OK)
+                    {
+                        this.resetGame();
+                    }
                     break;
                 }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            for (int k = 0; k < comboBox2.Items.Count; k++)
+            {
+                int index = comboBox2.Items.IndexOf(max);
+
+                if (k == index)
+                {
+                    MessageBox.Show("برنده بازی شد " + comboBox1.Items[k]);
+                }
+                
             }
         }
     }
