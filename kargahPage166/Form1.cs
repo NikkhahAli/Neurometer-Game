@@ -32,7 +32,7 @@ namespace kargahPage166
             {
                 if (comboBox1.Items[k].ToString() == "")
                 {
-                    MessageBox.Show("شما باید یک چیزی وارد کنید");
+                    MessageBox.Show("You have to enter something ");
                 }
                 else
                 {
@@ -55,7 +55,7 @@ namespace kargahPage166
         {
             if (textBox1.Text == "")
             {
-                MessageBox.Show("شما باید یک نام  وارد کنید ");
+                MessageBox.Show("you have to enter a name");
             }
             else
             {
@@ -72,7 +72,7 @@ namespace kargahPage166
             {
                 if (comboBox1.Items[k].ToString() == textBox1.Text)
                 {
-                    MessageBox.Show("شما باید یک نام جدید وارد کنید");
+                    MessageBox.Show("You have to enter a new name");
                     check = false;
                 }
                 else
@@ -109,7 +109,7 @@ namespace kargahPage166
                             timer1.Stop();
                             MessageBox.Show("شما باختید");
 
-                            DialogResult results = MessageBox.Show("شما باختید آیا میخواهید دوباره بازی کنید ؟ ", "هشدار", MessageBoxButtons.OKCancel);
+                            DialogResult results = MessageBox.Show("warning", "You have lost Do you want to play again ?", MessageBoxButtons.OKCancel);
 
                             if (results == DialogResult.OK)
                             {
@@ -150,7 +150,7 @@ namespace kargahPage166
 
                     MessageBox.Show("شما بردید");
 
-                    DialogResult result = MessageBox.Show("شما بردید آیا میخواهید دوباره بازی کنید ؟ ", "هشدار", MessageBoxButtons.OKCancel);
+                    DialogResult result = MessageBox.Show("warning", "You have lost Do you want to play again ?", MessageBoxButtons.OKCancel);
 
                     if (result == DialogResult.OK)
                     {
@@ -169,7 +169,7 @@ namespace kargahPage166
 
                 if (k == index)
                 {
-                    MessageBox.Show("برنده بازی شد " + comboBox1.Items[k]);
+                    MessageBox.Show("Won the game" + comboBox1.Items[k]);
                 }
                 
             }
