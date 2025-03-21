@@ -122,7 +122,7 @@ namespace kargahPage166
             }
         }
 
-        int max;
+        int min;
         int counter = 0;
         private void button3_MouseMove(object sender, MouseEventArgs e)
         {
@@ -135,14 +135,14 @@ namespace kargahPage166
 
                     if (counter == 0)
                     {
-                        max = seconds;
+                        min = seconds;
                         counter++;
                     }
                     else if (counter >= 1)
                     {
-                        if (max > seconds)
+                        if (min > seconds)
                         {
-                            max = seconds;
+                            min = seconds;
                         }
                     }
 
@@ -165,7 +165,7 @@ namespace kargahPage166
         {
             for (int k = 0; k < comboBox2.Items.Count; k++)
             {
-                int index = comboBox2.Items.IndexOf(max);
+                int index = comboBox2.Items.IndexOf(min);
 
                 if (k == index)
                 {
